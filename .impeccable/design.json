@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-06T21:34:00Z",
+  "title": "Design System: Yemen Future (يمن فيوتشر)",
+  "extensions": {
+    "colorMeta": {
+      "brand-navy": {
+        "role": "primary",
+        "displayName": "Sovereign Navy",
+        "canonical": "#1a2754",
+        "tonalRamp": [
+          "#0a0f21",
+          "#0f1733",
+          "#1a2754",
+          "#253775",
+          "#344c9b",
+          "#556eb8",
+          "#8a9ed3",
+          "#dbe2f5"
+        ]
+      },
+      "brand-cyan": {
+        "role": "secondary",
+        "displayName": "Clear Sky Cyan",
+        "canonical": "#73a7c1",
+        "tonalRamp": [
+          "#233e4c",
+          "#385f74",
+          "#558ca7",
+          "#73a7c1",
+          "#92bcd2",
+          "#b4d3e3",
+          "#d7e9f3",
+          "#f0f6fa"
+        ]
+      },
+      "surface-muted": {
+        "role": "neutral",
+        "displayName": "Muted Slate Surface",
+        "canonical": "#f8fafc",
+        "tonalRamp": [
+          "#0f172a",
+          "#1e293b",
+          "#334155",
+          "#64748b",
+          "#94a3b8",
+          "#cbd5e1",
+          "#e2e8f0",
+          "#f8fafc"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero display headlines and high-impact brand slogans."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Major section headings and primary category headers."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card titles, service headers, and feature highlights."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Descriptive paragraphs, feature bullet explanations, and body copy."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Button labels, badges, input placeholders, and navigation links."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Default easing for all interactive state transitions."
+      },
+      {
+        "name": "duration-fast",
+        "value": "200ms",
+        "purpose": "Immediate response for hover, focus, and button clicks."
+      },
+      {
+        "name": "duration-normal",
+        "value": "300ms",
+        "purpose": "Smooth transitions for header collapse and modal transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      },
+      {
+        "name": "2xl",
+        "value": "1536px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary high-contrast action button used for major conversions like downloading the app or submitting requests.",
+      "html": "<button class=\"ds-btn-primary\">تحميل التطبيق</button>",
+      "css": ".ds-btn-primary { background: #1a2754; color: #ffffff; padding: 10px 20px; font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif; font-size: 14px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; transition: background 0.2s ease; } .ds-btn-primary:hover { background: #253775; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Tinted secondary button for auxiliary interactions and secondary calls to action.",
+      "html": "<button class=\"ds-btn-secondary\">استكشف الخدمات</button>",
+      "css": ".ds-btn-secondary { background: #f0f6fa; color: #1a2754; border: 1px solid rgba(115, 167, 193, 0.3); padding: 10px 20px; font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif; font-size: 14px; font-weight: 600; border-radius: 12px; cursor: pointer; transition: background 0.2s ease; } .ds-btn-secondary:hover { background: rgba(115, 167, 193, 0.2); }"
+    },
+    {
+      "name": "Cyan Button",
+      "kind": "button",
+      "refersTo": "button-cyan",
+      "description": "Vibrant accent button for specialized partner and merchant onboarding actions.",
+      "html": "<button class=\"ds-btn-cyan\">طلب انضمام وكيل</button>",
+      "css": ".ds-btn-cyan { background: #73a7c1; color: #ffffff; padding: 10px 20px; font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif; font-size: 14px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; transition: background 0.2s ease; } .ds-btn-cyan:hover { background: #92bcd2; }"
+    },
+    {
+      "name": "Default Navy Badge",
+      "kind": "chip",
+      "refersTo": "badge-default",
+      "description": "High-authority badge for status signals and official accreditations.",
+      "html": "<span class=\"ds-badge-default\">خدمة معتمدة</span>",
+      "css": ".ds-badge-default { display: inline-flex; align-items: center; background: #1a2754; color: #ffffff; padding: 4px 12px; font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif; font-size: 12px; font-weight: 600; border-radius: 9999px; }"
+    },
+    {
+      "name": "Cyan Tint Badge",
+      "kind": "chip",
+      "refersTo": "badge-cyan",
+      "description": "Soft tinted pill for service features and promotional highlights.",
+      "html": "<span class=\"ds-badge-cyan\">فوري ومباشر</span>",
+      "css": ".ds-badge-cyan { display: inline-flex; align-items: center; background: #f0f6fa; color: #1a2754; border: 1px solid rgba(115, 167, 193, 0.3); padding: 4px 12px; font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif; font-size: 12px; font-weight: 600; border-radius: 9999px; }"
+    },
+    {
+      "name": "Service Feature Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Standard content card with crisp 1px border, zero shadow, and subtle hover stroke.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-title\">التحويلات المالية الفورية</h3><p class=\"ds-card-desc\">إرسال واستلام الحوالات المالية في ثوانٍ معدودة عبر شبكة وكلائنا ومحفظتنا الرقمية بأعلى معايير الأمان المصرفي.</p></div>",
+      "css": ".ds-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif; text-align: right; direction: rtl; transition: border-color 0.2s ease; } .ds-card:hover { border-color: rgba(115, 167, 193, 0.5); } .ds-card-title { color: #1a2754; font-size: 18px; font-weight: 700; margin: 0 0 8px 0; } .ds-card-desc { color: #64748b; font-size: 14px; line-height: 1.6; margin: 0; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Crisp form input field with cyan border focus indicator and zero drop shadow.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"أدخل رقم هاتفك أو الحساب...\" />",
+      "css": ".ds-input { width: 100%; height: 44px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 0 16px; font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif; font-size: 14px; color: #0f172a; text-align: right; direction: rtl; outline: none; transition: border-color 0.2s ease; box-sizing: border-box; } .ds-input:focus { border-color: #73a7c1; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Pristine Sovereign Vault",
+    "overview": "The Yemen Future design system embodies an uncompromising standard of institutional banking trust, structural precision, and modern financial inclusion. Rooted in the official corporate identity, the visual environment communicates safety, permanence, and technological forward-momentum for individual citizens, retail merchants, and enterprise partners across Yemen.",
+    "keyCharacteristics": [
+      "Zero-Shadows Architecture: Pure structural depth achieved via delicate 1px dividers, tonal surfaces, and crisp contrast without any box-shadow.",
+      "Sovereign Color Anchor: Authoritative Navy Blue (#1a2754) grounding headlines and primary actions, paired with uplifting Clear Sky Cyan (#73a7c1) for badges and directional cues.",
+      "Arabic-First Typographic Harmony: Native RTL flow with high-clarity IBM Plex Sans Arabic, ensuring effortless reading across varying devices and screen densities.",
+      "Restrained & Authoritative Micro-Interactions: Smooth 200–300ms transitions for button hovers, tab triggers, and navigation states that feel responsive and solid."
+    ],
+    "rules": [
+      {
+        "name": "The Sovereign Anchor Rule",
+        "body": "Primary navy (#1a2754) is the undisputed visual anchor of the page. Cyan (#73a7c1) acts as a selective secondary highlight and must never compete with Navy for structural dominance.",
+        "section": "colors"
+      },
+      {
+        "name": "The Pristine Contrast Rule",
+        "body": "All text and essential graphical elements must maintain at least a 4.5:1 contrast ratio against their respective backgrounds, strictly meeting WCAG AA requirements on light surfaces.",
+        "section": "colors"
+      },
+      {
+        "name": "The Single-Typeface Purity Rule",
+        "body": "Only IBM Plex Sans Arabic is permitted across all textual elements. No secondary or serif fonts may be introduced.",
+        "section": "typography"
+      },
+      {
+        "name": "The Zero Shadows Rule",
+        "body": "Never apply shadow, shadow-md, shadow-lg, or CSS box-shadow properties to any card, button, modal, or dropdown. Flat, crisp boundaries define the institutional aesthetic.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use Tailwind logical properties (ms-, me-, ps-, pe-, text-start) for all RTL layouts.",
+      "Do construct depth exclusively with 1px borders (#e2e8f0), background tints (#f0f6fa, #f8fafc), and white cards.",
+      "Do anchor display headlines with text-brand-navy (#1a2754) and reserve cyan for secondary accents and focus indicators.",
+      "Do maintain IBM Plex Sans Arabic across all typographic components."
+    ],
+    "donts": [
+      "Don't introduce any shadow-* utility or CSS box-shadow under any circumstance.",
+      "Don't use dark mode or dark-themed container surfaces for primary content sections.",
+      "Don't mix arbitrary, non-brand hex codes when predefined --color-brand-* tokens exist.",
+      "Don't use hardcoded LTR layout classes like ml-, mr-, pl-, pr-, left-, or right-."
+    ]
+  }
+}

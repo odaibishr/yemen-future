@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# يمن فيوتشر (Yemen Future) — موقع الخدمات المالية والمدفوعات الإلكترونية
 
-## Getting Started
+موقع الويب الرسمي لشركة **يمن فيوتشر للخدمات المالية والمدفوعات الإلكترونية**، يقدم تجربة رقمية متطورة وسريعة باللغة العربية لعرض الخدمات المصرفية والمدفوعات الرقمية (التحويلات، سداد الفواتير وشحن الباقات، المحفظة الرقمية، وحلول التجار ونقاط البيع).
 
-First, run the development server:
+---
 
+## التقنيات المستخدمة (Tech Stack)
+
+- **Framework**: [Next.js 16.3](https://nextjs.org/) (App Router, React 19)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Typography**: [IBM Plex Sans Arabic](https://fonts.google.com/specimen/IBM+Plex+Sans+Arabic)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Class Utilities**: `clsx` + `tailwind-merge`
+- **Direction**: Right-to-Left (`dir="rtl"`)
+
+---
+
+## هوية الألوان (Brand Colors)
+
+الألوان مستخرجة مباشرة من الشعار الرسمي للشركة (`public/svgs/logo.svg`):
+- **الكحلي الداكن الفخم (Brand Navy)**: `#1a2754`
+- **الأزرق السماوي الناعم (Brand Cyan)**: `#73a7c1`
+- **الخلفية والأسطح (Clean Banking White)**: `#ffffff` مع مساحات متباينة `#f8fafc`
+
+---
+
+## التشغيل والتطوير (Getting Started)
+
+### المتطلبات الأساسية
+- Node.js (الإصدار 18 فما فوق أو الإصدار 20+)
+- npm أو pnpm أو yarn
+
+### التثبيت
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### تشغيل خادم التطوير
+```bash
+npm run dev
+```
+افتح المتصفح على: [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### بناء المشروع للإنتاج
+```bash
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### فحص الكود (Linting)
+```bash
+npm run lint
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## هيكلية المشروع (Project Structure)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+yemen-future/
+├── public/                 # الشعار الرسمي والملفات الثابتة
+├── src/
+│   ├── app/                # صفحات وتخطيطات Next.js 16 App Router
+│   ├── components/         # المكونات البرمجية (Sections, UI, Layout)
+│   ├── data/               # البيانات والمحتوى العربي للخدمات والقيم
+│   ├── lib/                # دوال مساعدة (cn / utils)
+│   └── types/              # تعريفات الأنواع (TypeScript types)
+├── AGENTS.md               # إرشادات وتعليمات الوكلاء البرمجيين
+├── PROJECT.md              # سياق المشروع والقرارات المعمارية
+└── ARCHITECTURE.md         # المخطط المعماري وتدفق البيانات
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## التوثيق الإضافي
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [AGENTS.md](file:///e:/pythonProjects/webProjects/yemen-future/AGENTS.md): معايير وقواعد كتابة الكود للوكلاء.
+- [PROJECT.md](file:///e:/pythonProjects/webProjects/yemen-future/PROJECT.md): أهداف المشروع والقرارات الفنية.
+- [ARCHITECTURE.md](file:///e:/pythonProjects/webProjects/yemen-future/ARCHITECTURE.md): البنية البرمجية وتدفق البيانات.

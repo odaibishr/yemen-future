@@ -1,0 +1,146 @@
+/* Dynamic content extensions only. The original theme, typography, spacing, native
+   cards and breakpoints remain in site.css. No generic CMS theme overrides it. */
+[hidden] { display: none !important; }
+.cms-text { white-space: pre-line; overflow-wrap: anywhere; }
+h1, h2, h3, h4, p, a, strong, small, span, li { overflow-wrap: anywhere; }
+img, svg { max-inline-size: 100%; }
+.hero-grid > *, .split-grid > *, .service-grid > *, .value-grid > *, .footer-grid > *,
+.contact-shell > *, .contact-page-grid > *, .detailed-service > *, .stats-grid > *,
+.process-grid > *, .feature-list > li > span, .float-card > div { min-inline-size: 0; }
+.main-card img, .about-panel img, .brand img, .footer-brand img { height: auto; object-fit: contain; }
+.cms-page-section { min-inline-size: 0; scroll-margin-top: calc(var(--header) + 20px); }
+#mainContent > .cms-page-section:first-of-type > section:not(.hero):not(.page-hero) { padding-block-start: calc(var(--header) + 48px); }
+.cms-single-column { grid-template-columns: minmax(0, 1fr) !important; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* Optional media and links add no space when the editor leaves them empty. */
+.cms-item-image { display: block; width: 100%; height: auto; max-block-size: 400px; object-fit: cover; aspect-ratio: 8 / 5; border-radius: 15px; margin-block-end: 18px; }
+.cms-fit-contain { object-fit: contain; }
+.cms-fit-cover { object-fit: cover; }
+.cms-story-image, .cms-custom-image { display: block; width: 100%; height: auto; max-block-size: 540px; object-fit: contain; border-radius: var(--radius); }
+.cms-story-image { margin-block-start: 24px; }
+.cms-service-detail-image { width: 100%; height: 100%; }
+.cms-icon { width: 26px; height: 26px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; }
+.cms-item-badge { display: inline-block; font-size: 12px; color: inherit; border: 1px solid currentColor; border-radius: 8px; padding: 2px 8px; margin-block-end: 10px; }
+.cms-item-link { display: inline-block; margin-block-start: 12px; max-inline-size: 100%; }
+.cms-item-value { display: block; font-size: 30px; }
+.service-visual > .cms-icon { width: 64px; height: 64px; color: var(--navy); }
+.service-visual > span { max-inline-size: 100%; text-align: center; }
+.service-card > .cms-item-link { display: inline; }
+.service-card .cms-item-link span { position: static; }
+.service-card .cms-item-image { margin-block-end: 20px; }
+
+/* Original hero: tilted main card, two floating cards, inline trust labels. */
+.hero { flex-direction: column; justify-content: center; }
+.hero-visual { min-width: 0; }
+.visual-top { gap: 8px; }
+.visual-top i, .icon-disc { flex-shrink: 0; }
+.float-card { max-inline-size: min(280px, 65%); }
+.icon-disc .cms-icon { width: 23px; height: 23px; }
+.trust-row { flex-wrap: wrap; }
+.trust-row b .cms-icon { width: 15px; height: 15px; }
+.cms-trust-item { min-inline-size: 0; }
+.cms-trust-item > small, .cms-trust-item > .cms-item-link { display: block; }
+.cms-trust-item > .cms-item-image { max-inline-size: 150px; margin-block: 8px; }
+.hero-actions { flex-wrap: wrap; }
+.hero-actions .btn, .cta-banner .btn, .footer-cta .btn { max-inline-size: 100%; white-space: normal; text-align: center; }
+.cms-extra-hero-cards { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 18px; margin-block-start: 28px; }
+.cms-extra-hero-cards .float-card { position: static; flex: 0 1 270px; max-inline-size: 100%; }
+/* Only rich/long floating-card content switches to normal flow to avoid overlap. */
+.cms-flow-visual { height: auto; min-height: 520px; gap: 18px; padding-block: 24px; }
+.cms-flow-visual .main-card { min-height: 280px; }
+.cms-flow-visual .float-card { position: static; max-inline-size: 90%; }
+
+/* Native badge and lists; further badges use the same original styling. */
+.about-badge { max-inline-size: 80%; }
+.cms-extra-about-badges { display: flex; flex-wrap: wrap; gap: 16px; }
+.cms-extra-about-badges .about-badge { position: static; flex: 0 1 250px; max-inline-size: 100%; }
+.about-badge .cms-item-image { max-block-size: 150px; }
+.about-badge .cms-item-link, .contact-copy .cms-item-link, .stats-strip .cms-item-link { color: inherit; }
+.stats-grid > div > .cms-icon, .process-item > .cms-icon { margin-inline: auto; }
+.stats-grid > div > .cms-item-image { max-inline-size: 180px; margin-inline: auto; }
+.stats-grid .cms-item-link span { font-size: inherit; color: inherit; }
+.process-item .cms-item-image { max-inline-size: 230px; margin-inline: auto; }
+.cms-flexible-process { grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap: 24px; align-items: start; }
+.cms-flexible-process .process-line { display: none; }
+.info-list article > b .cms-icon { width: 18px; height: 18px; margin-inline-end: 8px; }
+.contact-points .cms-item-link span { display: inline; }
+.cms-contact-point > small { display: block; }
+.cms-contact-point .cms-item-image { max-block-size: 180px; margin-block-start: 12px; }
+.cms-about-visual { min-inline-size: 0; }
+
+/* Original rows continue to wrap when more records are added. */
+@media (min-width: 1001px) {
+    .hero-grid { grid-template-columns: minmax(0, 1.06fr) minmax(0, .94fr); }
+    .split-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .service-grid, .value-grid, .stats-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .footer-grid { grid-template-columns: minmax(0, 1.25fr) minmax(0, .7fr) minmax(0, 1fr) minmax(0, .9fr); }
+    .detailed-service { grid-template-columns: 70px minmax(0, 1fr) 280px; }
+    .detailed-service.reverse { grid-template-columns: 280px 70px minmax(0, 1fr); }
+    .detailed-service.cms-no-number { grid-template-columns: minmax(0, 1fr) 280px; }
+    .detailed-service.reverse.cms-no-number { grid-template-columns: 280px minmax(0, 1fr); }
+}
+
+/* New, optional sections inherit the original service-card template. */
+.cms-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr)); gap: 18px; }
+.cms-footer-cards, .cms-status-cards { margin-block: 30px; }
+.cms-footer-cards .service-card, .cms-status-cards .service-card { color: var(--text); }
+.site-footer .cms-footer-cards .service-card { background: transparent; color: inherit; border-color: rgba(255,255,255,.12); }
+.site-footer .cms-footer-cards .cms-item-link { display: inline; }
+.launch-card .service-card h3 { font-size: 19px; letter-spacing: 0; }
+.social-link .cms-icon { fill: none; stroke: currentColor; width: 22px; height: 22px; }
+.social-link img { width: 24px; height: 24px; object-fit: contain; }
+
+/* Content length safety without changing original sizes and spacing. */
+.form-field, .form-field input, .form-field textarea { min-inline-size: 0; max-inline-size: 100%; }
+.form-field textarea { resize: vertical; }
+.footer-contact-link, .contact-value-link { overflow-wrap: anywhere; word-break: break-word; }
+.cta-banner { flex-wrap: wrap; }
+.cta-banner > div { min-inline-size: 0; }
+.yf-ads-grid.hero-placement { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.yf-ad-card, .yf-banner-ad, .yf-offer-card, .yf-ad-content { min-inline-size: 0; }
+.reveal { opacity: 1; transform: none; }
+body.js-reveal-ready .reveal:not(.visible) { opacity: 0; transform: translateY(22px); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+/* Keep original nav for normal content. Only long navigation switches to a menu. */
+.brand, .brand span { min-inline-size: 0; }
+.brand img, .nav-toggle, .theme-toggle { flex-shrink: 0; }
+.main-nav { min-inline-size: 0; }
+.compact-navigation .nav-toggle { display: block; }
+.compact-navigation .brand { max-inline-size: calc(100% - 60px); }
+.compact-navigation .main-nav { position: fixed; top: var(--header); inset-inline: 20px; display: none; flex-direction: column; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 25px; box-shadow: var(--shadow); max-height: calc(100dvh - var(--header) - 20px); overflow-y: auto; }
+.compact-navigation .main-nav.open { display: flex; }
+body:not(.js-nav-ready) .compact-navigation { position: static; }
+body:not(.js-nav-ready) .compact-navigation .nav-wrap { flex-wrap: wrap; height: auto; }
+body:not(.js-nav-ready) .compact-navigation .main-nav { display: flex; position: static; flex-direction: row; flex-wrap: wrap; flex-basis: 100%; max-height: none; }
+body:not(.js-nav-ready) .compact-navigation .nav-toggle { display: none; }
+@media (max-width: 1000px) {
+    .hero-grid, .split-grid, .contact-shell, .contact-page-grid { grid-template-columns: minmax(0, 1fr); }
+    .hero-visual { width: 100%; max-width: 600px; margin-inline: auto; }
+    .main-nav { max-height: calc(100dvh - var(--header) - 20px); overflow-y: auto; }
+    .brand { max-inline-size: calc(100% - 50px); }
+    .service-grid, .value-grid, .stats-grid, .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .detailed-service, .detailed-service.reverse { grid-template-columns: 50px minmax(0, 1fr); }
+    .detailed-service.cms-no-number, .detailed-service.reverse.cms-no-number { grid-template-columns: minmax(0, 1fr); }
+    body:not(.js-nav-ready) .site-header { position: static; height: auto; }
+    body:not(.js-nav-ready) .nav-wrap { flex-wrap: wrap; min-height: var(--header); }
+    body:not(.js-nav-ready) .main-nav { display: flex; position: static; flex-direction: row; flex-wrap: wrap; flex-basis: 100%; max-height: none; }
+    body:not(.js-nav-ready) .nav-toggle { display: none; }
+}
+@media (max-width: 650px) {
+    .service-grid, .value-grid, .form-grid, .footer-grid, .cms-card-grid { grid-template-columns: minmax(0, 1fr); }
+    .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .detailed-service, .detailed-service.reverse { grid-template-columns: minmax(0, 1fr); }
+    .hero-actions .btn { flex: 0 1 auto; }
+    .cms-extra-hero-cards .float-card, .cms-flow-visual .float-card { display: flex; }
+    .cms-flow-visual { min-height: 360px; }
+    .cms-extra-about-badges { justify-content: center; }
+    .cms-extra-about-badges .about-badge { flex-basis: 100%; }
+    .form-field.full { grid-column: auto; }
+    .service-visual > span { font-size: clamp(24px, 10vw, 46px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+    body.js-reveal-ready .reveal:not(.visible) { opacity: 1; transform: none; }
+}
