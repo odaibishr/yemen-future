@@ -25,6 +25,14 @@ export interface GoalItem {
   icon: string;
 }
 
+export interface TrustMetricItem {
+  id: string;
+  value: string;
+  label: string;
+  sublabel: string;
+  icon: string;
+}
+
 export interface ContactChannel {
   type: "phone" | "whatsapp" | "email" | "location";
   label: string;
