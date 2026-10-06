@@ -20,7 +20,7 @@ export function PhoneSimulation() {
   const { phoneMockup } = dafaaData;
 
   return (
-    <div className="relative flex justify-center items-center w-full max-w-[270px] sm:max-w-[290px] mx-auto">
+    <div className="relative flex justify-center items-center w-full max-w-67.5 sm:max-w-72.5 mx-auto">
       {/* Physical Phone Device Container (Flat border, Zero shadows, compact height) */}
       <div className="w-full bg-slate-950 rounded-[38px] p-2.5 sm:p-3 border-[3px] border-slate-700 relative z-10">
         {/* Phone Screen Glass */}

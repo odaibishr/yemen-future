@@ -67,8 +67,8 @@ export function AppShowcase() {
 
             {/* Official Dafaa Logo Showcase Column */}
             <div className="lg:col-span-5 flex justify-center items-center w-full">
-              <div className="w-full max-w-[280px] sm:max-w-[320px] bg-white rounded-3xl p-6 sm:p-7 border border-brand-cyan/25 flex items-center justify-center">
-                <div className="relative w-full aspect-square max-w-[200px] sm:max-w-[230px] flex items-center justify-center">
+              <div className="w-full max-w-70 sm:max-w-80 bg-white rounded-3xl p-6 sm:p-7 border border-brand-cyan/25 flex items-center justify-center">
+                <div className="relative w-full aspect-square max-w-50 sm:max-w-57.5 flex items-center justify-center">
                   <Image
                     src="/images/dafaa-logo-official.png"
                     alt="شعار محفظة دَفْع الرسمي"

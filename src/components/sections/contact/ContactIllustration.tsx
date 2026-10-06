@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function ContactIllustration() {
   return (
-    <div className="flex h-[320px] sm:h-[480px] lg:h-[603px] w-full shrink-0 items-center justify-center overflow-hidden rounded-[30px] bg-[#0c1222] border border-brand-cyan/15 relative">
+    <div className="flex h-80 sm:h-120 lg:h-150.75 w-full shrink-0 items-center justify-center overflow-hidden rounded-[30px] bg-[#0c1222] border border-brand-cyan/15 relative">
       <Image
         src="/images/answers-solutions-brand.jpg"
         alt="مركز الدعم الفني والاستفسارات - يمن فيوتشر"

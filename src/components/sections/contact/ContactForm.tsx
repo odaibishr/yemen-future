@@ -1,9 +1,9 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import { CheckCircle2, MessageSquare, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export function ContactForm() {
   const [formData, setFormData] = React.useState({
@@ -69,7 +69,7 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="flex h-full min-h-[480px] w-full flex-col justify-center rounded-3xl border border-brand-cyan/20 bg-brand-cyan-tint/40 p-8 sm:p-12 text-center">
+      <div className="flex h-full min-h-120 w-full flex-col justify-center rounded-3xl border border-brand-cyan/20 bg-brand-cyan-tint/40 p-8 sm:p-12 text-center">
         <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
           <CheckCircle2 className="h-10 w-10" />
         </div>
@@ -130,8 +130,12 @@ export function ContactForm() {
             }}
             placeholder="الاسم"
             disabled={loading}
-            className={`h-[58px] sm:h-[62px] w-full rounded-2xl bg-[#ECF0F3] px-5 text-start font-medium text-slate-900 placeholder-[#6B7280] outline-none text-base sm:text-lg transition-all focus:border-brand-navy/30 focus:bg-white ${errors.firstName ? "border-2 border-red-500 bg-red-50/30" : "border border-transparent"
-              }`}
+            className={cn(
+              "h-14.5 sm:h-15.5 w-full rounded-2xl bg-[#ECF0F3] px-5 text-start font-medium text-slate-900 placeholder:text-[#6B7280] outline-none text-base sm:text-lg transition-all focus:border-brand-navy/30 focus:bg-white",
+              errors.firstName
+                ? "border-2 border-red-500 bg-red-50/30"
+                : "border border-transparent"
+            )}
           />
           {errors.firstName && (
             <span className="mt-1 text-xs sm:text-sm font-medium text-red-500 text-start">
@@ -151,7 +155,7 @@ export function ContactForm() {
             onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
             placeholder="اللقب"
             disabled={loading}
-            className="h-[58px] sm:h-[62px] w-full rounded-2xl border border-transparent bg-[#ECF0F3] px-5 text-start font-medium text-slate-900 placeholder-[#6B7280] outline-none text-base sm:text-lg transition-all focus:border-brand-navy/30 focus:bg-white"
+            className="h-14.5 sm:h-15.5 w-full rounded-2xl border border-transparent bg-[#ECF0F3] px-5 text-start font-medium text-slate-900 placeholder:text-[#6B7280] outline-none text-base sm:text-lg transition-all focus:border-brand-navy/30 focus:bg-white"
           />
         </div>
       </div>
@@ -171,8 +175,12 @@ export function ContactForm() {
           placeholder="البريد الإلكتروني"
           disabled={loading}
           dir="ltr"
-          className={`h-[58px] sm:h-[62px] w-full rounded-2xl bg-[#ECF0F3] px-5 text-start font-medium text-slate-900 placeholder-[#6B7280] outline-none text-base sm:text-lg transition-all focus:border-brand-navy/30 focus:bg-white ${errors.email ? "border-2 border-red-500 bg-red-50/30" : "border border-transparent"
-            }`}
+          className={cn(
+            "h-14.5 sm:h-15.5 w-full rounded-2xl bg-[#ECF0F3] px-5 text-start font-medium text-slate-900 placeholder:text-[#6B7280] outline-none text-base sm:text-lg transition-all focus:border-brand-navy/30 focus:bg-white",
+            errors.email
+              ? "border-2 border-red-500 bg-red-50/30"
+              : "border border-transparent"
+          )}
         />
         {errors.email && (
           <span className="mt-1 text-xs sm:text-sm font-medium text-red-500 text-start">
@@ -198,8 +206,12 @@ export function ContactForm() {
           maxLength={200}
           disabled={loading}
           rows={4}
-          className={`min-h-[160px] sm:min-h-[177px] w-full rounded-2xl bg-[#ECF0F3] px-5 py-4 text-start font-medium text-slate-900 placeholder-[#6B7280] outline-none text-base sm:text-lg resize-none transition-all focus:border-brand-navy/30 focus:bg-white ${errors.message ? "border-2 border-red-500 bg-red-50/30" : "border border-transparent"
-            }`}
+          className={cn(
+            "min-h-40 sm:min-h-44.25 w-full rounded-2xl bg-[#ECF0F3] px-5 py-4 text-start font-medium text-slate-900 placeholder:text-[#6B7280] outline-none text-base sm:text-lg resize-none transition-all focus:border-brand-navy/30 focus:bg-white",
+            errors.message
+              ? "border-2 border-red-500 bg-red-50/30"
+              : "border border-transparent"
+          )}
         />
         <div className="mt-1.5 flex items-center justify-between text-xs sm:text-sm text-[#4F5258]">
           <span className="select-none text-start">
@@ -217,7 +229,12 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="group mt-2 flex h-[58px] sm:h-[62px] w-full items-center justify-center rounded-2xl bg-brand-navy hover:bg-brand-navy-light text-2xl sm:text-3xl font-medium text-white transition-all duration-300 cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-400"
+        className={cn(
+          "group mt-2 flex h-14.5 sm:h-15.5 w-full items-center justify-center rounded-2xl text-2xl sm:text-3xl font-medium text-white transition-all duration-300",
+          loading
+            ? "cursor-not-allowed bg-gray-400"
+            : "cursor-pointer bg-brand-navy hover:bg-brand-navy-light"
+        )}
       >
         {loading ? (
           <div className="flex items-center justify-center gap-2">

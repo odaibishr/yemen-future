@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, ArrowUp, ShieldCheck } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowUp } from "lucide-react";
 import { Container } from "@/components/common/Container";
 
 export function Footer() {

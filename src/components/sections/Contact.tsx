@@ -1,7 +1,6 @@
 import { Container } from "@/components/common/Container";
 import { ContactForm } from "./contact/ContactForm";
 import { ContactIllustration } from "./contact/ContactIllustration";
-import { ContactChannels } from "./contact/ContactChannels";
 
 export function Contact() {
   return (
