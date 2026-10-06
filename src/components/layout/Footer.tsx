@@ -33,11 +33,6 @@ export function Footer() {
             <p className="text-sm text-slate-300 leading-relaxed">
               صرح وطني رائد في التكنولوجيا المالية والمدفوعات الإلكترونية، يبتكر حلول دفع رقمية موثوقة تلبي احتياجات المواطنين والتجار والشركات في اليمن.
             </p>
-
-            <div className="flex items-center gap-2 text-xs text-brand-cyan-light bg-white/5 p-3 rounded-xl border border-white/10">
-              <ShieldCheck className="w-4 h-4 shrink-0 text-brand-cyan" />
-              <span>خاضعة لإشراف البنك المركزي اليمني</span>
-            </div>
           </div>
 
           {/* Column 2: Quick Links */}
@@ -90,7 +85,7 @@ export function Footer() {
               </div>
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-brand-cyan shrink-0 mt-0.5" />
-                <span>صنعاء - شارع الزبيري | عدن - المعلا</span>
+                <span>صنعاء - شارع الخمسين</span>
               </div>
             </div>
           </div>
