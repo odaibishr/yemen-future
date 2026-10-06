@@ -1,16 +1,3 @@
-export type ServiceCategory = "individuals" | "business";
-
-export interface ServiceItem {
-  id: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  category: ServiceCategory;
-  icon: string;
-  badge?: string;
-  features: string[];
-}
-
 export interface ValueItem {
   id: string;
   title: string;
