@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="bg-brand-navy text-white border-t border-brand-navy-light pt-16 pb-12">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16 pb-12 border-b border-white/10">
           {/* Column 1: Brand Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
@@ -62,11 +62,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="hover:text-brand-cyan transition-colors">
-                  دليل الخدمات المالية
-                </Link>
-              </li>
-              <li>
                 <Link href="#app" className="hover:text-brand-cyan transition-colors">
                   تطبيق المحفظة الرقمية
                 </Link>
@@ -79,46 +74,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Core Services */}
-          <div className="space-y-4">
-            <h4 className="text-base font-bold text-white border-s-2 border-brand-cyan ps-2.5">
-              الخدمات والحلول
-            </h4>
-            <ul className="space-y-2.5 text-sm text-slate-300">
-              <li>
-                <Link href="#services" className="hover:text-brand-cyan transition-colors">
-                  التحويلات المالية الفورية
-                </Link>
-              </li>
-              <li>
-                <Link href="#services" className="hover:text-brand-cyan transition-colors">
-                  سداد فواتير الاتصالات وباقات النت
-                </Link>
-              </li>
-              <li>
-                <Link href="#services" className="hover:text-brand-cyan transition-colors">
-                  تطبيق محفظة يمن فيوتشر
-                </Link>
-              </li>
-              <li>
-                <Link href="#services" className="hover:text-brand-cyan transition-colors">
-                  أجهزة نقاط البيع الذكية (POS)
-                </Link>
-              </li>
-              <li>
-                <Link href="#services" className="hover:text-brand-cyan transition-colors">
-                  بوابات الدفع للتجارة الإلكترونية
-                </Link>
-              </li>
-              <li>
-                <Link href="#services" className="hover:text-brand-cyan transition-colors">
-                  صرف الرواتب والمستحقات
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 4: Contact & Channels */}
+          {/* Column 3: Contact & Channels */}
           <div className="space-y-4">
             <h4 className="text-base font-bold text-white border-s-2 border-brand-cyan ps-2.5">
               خدمة العملاء
