@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "appRoot": "E:\\pythonProjects\\webProjects\\yemen-future",
+  "repoRoot": "E:\\pythonProjects\\webProjects\\yemen-future",
+  "contextRoot": "E:\\pythonProjects\\webProjects\\yemen-future",
+  "sessionRoot": "E:\\pythonProjects\\webProjects\\yemen-future\\.impeccable\\live",
+  "productPath": "E:\\pythonProjects\\webProjects\\yemen-future\\PRODUCT.md",
+  "designPath": "E:\\pythonProjects\\webProjects\\yemen-future\\DESIGN.md",
+  "resolvedFrom": "cwd"
+}
