@@ -24,14 +24,7 @@ export function SectionHeading({
         className
       )}
     >
-      {badge && (
-        <Badge
-          variant="secondary"
-          className="px-3.5 py-1 text-xs font-semibold text-brand-navy border border-brand-cyan/40 bg-brand-cyan-tint"
-        >
-          {badge}
-        </Badge>
-      )}
+
 
       <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-brand-navy leading-tight">
         {title}
