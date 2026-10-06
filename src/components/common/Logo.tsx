@@ -6,12 +6,14 @@ interface LogoProps {
   className?: string;
   showText?: boolean;
   size?: "sm" | "md" | "lg";
+  variant?: "default" | "light";
 }
 
 export function Logo({
   className,
   showText = true,
   size = "md",
+  variant = "default",
 }: LogoProps) {
   const dimensions = {
     sm: { width: 36, height: 36, textSize: "text-lg", subSize: "text-[10px]" },
@@ -43,16 +45,18 @@ export function Logo({
         <div className="flex flex-col text-start">
           <span
             className={cn(
-              "font-extrabold tracking-tight text-brand-navy leading-none font-sans",
-              dimensions.textSize
+              "font-extrabold tracking-tight leading-none font-sans",
+              dimensions.textSize,
+              variant === "light" ? "text-white" : "text-brand-navy"
             )}
           >
             يمن فيوتشر
           </span>
           <span
             className={cn(
-              "font-medium text-brand-cyan leading-tight mt-0.5",
-              dimensions.subSize
+              "font-medium leading-tight mt-0.5",
+              dimensions.subSize,
+              variant === "light" ? "text-brand-cyan-light" : "text-brand-cyan"
             )}
           >
             للخدمات المالية والمدفوعات

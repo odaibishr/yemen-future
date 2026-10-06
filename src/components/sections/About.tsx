@@ -1,53 +1,35 @@
-import { Target, Compass, Building, CheckCircle2 } from "lucide-react";
+import { Target, Compass } from "lucide-react";
 import { Container } from "@/components/common/Container";
-import { SectionHeading } from "@/components/common/SectionHeading";
 import { companyOverview } from "@/data/values";
 
 export function About() {
   return (
     <section id="about" className="py-20 bg-white border-b border-border-subtle">
       <Container>
-        <SectionHeading
-          badge="من نحن"
-          title="رواد التكنولوجيا المالية والدفع الإلكتروني"
-          description="نسخر الابتكار الرقمي والخبرات المصرفية لنمنح المجتمع اليمني تجربة مالية موثوقة وميسرة تواكب المستقبل."
-        />
+        {/* Company Identity & Story */}
+        <div className="space-y-6 text-start">
+          {/* Company Brand */}
+          <div className="space-y-2">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-brand-navy tracking-tight">
+              يمن <span className="text-brand-cyan">فيوتشر</span>
+            </h2>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800 leading-snug">
+              {companyOverview.name}
+            </h3>
+          </div>
 
-        {/* Story Paragraph */}
-        <div className="mt-12 max-w-4xl mx-auto p-6 sm:p-8 rounded-2xl bg-surface-muted border border-border-subtle text-start">
-          <div className="flex items-start gap-4">
-            <div className="p-3 rounded-xl bg-brand-navy text-white shrink-0 hidden sm:block">
-              <Building className="w-6 h-6" />
-            </div>
-            <div className="space-y-3">
-              <h3 className="text-xl font-bold text-brand-navy">
-                {companyOverview.name}
-              </h3>
-              <p className="text-base text-slate-700 leading-relaxed">
-                {companyOverview.story}
-              </p>
-              <div className="pt-2 flex flex-wrap gap-4 text-xs font-semibold text-brand-navy">
-                <span className="inline-flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-brand-cyan" />
-                  ترخيص واعتماد رسمي
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-brand-cyan" />
-                  كوادر إدارية وتقنية متخصصة
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-brand-cyan" />
-                  بنية تحتية برمجية مؤمنة بالكامل
-                </span>
-              </div>
-            </div>
+          {/* Company Story - Full Width, No Background, No Border, Bigger Font */}
+          <div className="w-full text-start">
+            <p className="text-xl sm:text-2xl lg:text-3xl text-slate-700 leading-relaxed font-normal">
+              {companyOverview.story}
+            </p>
           </div>
         </div>
 
-        {/* Vision & Mission Grid (Flat Cards, Zero Shadows) */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {/* Row 2: Vision & Mission Full-Width 2-Column Cards */}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 w-full">
           {/* Mission Card */}
-          <div className="p-8 rounded-2xl bg-white border-2 border-brand-cyan/30 text-start space-y-4">
+          <div className="p-8 rounded-2xl bg-white border-2 border-brand-cyan/30 text-start space-y-4 transition-colors hover:border-brand-cyan/60">
             <div className="w-12 h-12 rounded-xl bg-brand-cyan-tint border border-brand-cyan/30 flex items-center justify-center text-brand-navy">
               <Compass className="w-6 h-6 text-brand-navy" />
             </div>
@@ -60,7 +42,7 @@ export function About() {
           </div>
 
           {/* Vision Card */}
-          <div className="p-8 rounded-2xl bg-brand-navy text-white border border-brand-navy-light text-start space-y-4">
+          <div className="p-8 rounded-2xl bg-brand-navy text-white border border-brand-navy-light text-start space-y-4 transition-colors hover:border-brand-cyan">
             <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center text-brand-cyan-light">
               <Target className="w-6 h-6 text-brand-cyan-light" />
             </div>
