@@ -39,3 +39,11 @@ export interface GovernorateNetwork {
   agents: number;
   highlight: string;
 }
+
+export interface FaqItem {
+  id: string;
+  category: "all" | "account" | "transfers" | "bills" | "security" | "merchants";
+  question: string;
+  answer: string;
+  badge?: string;
+}
