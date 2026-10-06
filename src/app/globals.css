@@ -1,26 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-sans: 'IBM Plex Sans Arabic', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Official Brand Colors extracted from logo.svg */
+  --color-brand-navy: #1a2754;
+  --color-brand-navy-light: #253775;
+  --color-brand-navy-dark: #0f1733;
+
+  --color-brand-cyan: #73a7c1;
+  --color-brand-cyan-light: #92bcd2;
+  --color-brand-cyan-dark: #558ca7;
+  --color-brand-cyan-tint: #f0f6fa;
+
+  /* Surface & Border Neutrals (Light Mode Banking) */
+  --color-surface-muted: #f8fafc;
+  --color-surface-tint: #f1f6fa;
+  --color-border-subtle: #e2e8f0;
+  --color-border-brand: #cbdce6;
+
+  /* Semantic UI Tokens (Light Mode Only) */
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #0f172a;
+
+  --color-primary: #1a2754;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #f0f6fa;
+  --color-secondary-foreground: #1a2754;
+
+  --color-accent: #f0f6fa;
+  --color-accent-foreground: #1a2754;
+
+  --color-muted: #f8fafc;
+  --color-muted-foreground: #64748b;
+
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+  --color-ring: #73a7c1;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  *,
+  ::after,
+  ::before {
+    border-color: var(--color-border);
+    /* Strict No Shadows Rule: Zero box-shadow across the site */
+    box-shadow: none !important;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
 }
