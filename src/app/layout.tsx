@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { SmothScroll } from "@/components/providers/SmothScroll";
 
 export const metadata: Metadata = {
   title: "يمن فيوتشر للخدمات المالية والمدفوعات الإلكترونية | Yemen Future",
@@ -42,7 +43,9 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col font-sans bg-white text-slate-900 selection:bg-brand-cyan/20 selection:text-brand-navy">
-        {children}
+        <SmothScroll>
+          {children}
+        </SmothScroll>
       </body>
     </html>
   );
