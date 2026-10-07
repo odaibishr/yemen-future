@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ShieldCheck,
   Sparkles,
@@ -15,9 +17,15 @@ import {
   ArrowUpRight,
   LucideIcon,
 } from "lucide-react";
+import { motion } from "motion/react";
 import { Container } from "@/components/common/Container";
 import { SectionHeading } from "@/components/common/SectionHeading";
-import { valuesData, trustMetricsData, goalsData } from "@/data/values";
+import { valuesData, goalsData } from "@/data/values";
+import {
+  fadeInUpVariants,
+  staggerContainerVariants,
+  fastStaggerContainerVariants,
+} from "@/lib/animations";
 
 const iconMap: Record<string, LucideIcon> = {
   ShieldCheck,
@@ -55,15 +63,22 @@ export function Values() {
           description="تلتزم يمن فيوتشر بمبادئ تشغيلية صارمة تضمن أعلى درجات الحماية وتمنح المجتمع تجربة دفع رقمية رفيعة المستوى."
         />
 
-        {/* 4 Values Cards Grid */}
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+        {/* 4 Values Cards Grid with Staggered In-View Motion */}
+        <motion.div
+          variants={staggerContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch"
+        >
           {valuesData.map((val, idx) => {
             const IconComponent = iconMap[val.icon] || Sparkles;
             const indexFormatted = String(idx + 1).padStart(2, "0");
 
             return (
-              <div
+              <motion.div
                 key={val.id}
+                variants={fadeInUpVariants}
                 className="group relative p-7 rounded-3xl bg-white border border-border-subtle hover:border-brand-cyan transition-all duration-300 ease-out hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden cursor-default"
               >
                 {/* Top Glowing Indicator Line */}
@@ -93,13 +108,10 @@ export function Values() {
 
                 {/* Interactive Bottom Accent Bar */}
                 <div className="h-0.5 w-8 bg-brand-cyan/30 group-hover:w-full group-hover:bg-brand-cyan transition-all duration-300 rounded-full mt-6" />
-              </div>
+              </motion.div>
             );
           })}
-        </div>
-
-        {/* Banking Trust & Performance Operations Matrix (Dark Luxury Fintech Card) */}
-
+        </motion.div>
 
         {/* Elegant Section Divider */}
         <div className="h-px w-full bg-linear-to-r from-transparent via-slate-200 to-transparent mt-24 mb-16" />
@@ -112,14 +124,21 @@ export function Values() {
             description="محاور عمل مدروسة تستهدف تمكين الاقتصاد الوطني والانتقال بالتعاملات من النمط التقليدي إلى الآفاق الرقمية."
           />
 
-          {/* Balanced 6 Goals Grid (3x2) with Zero Shadows & Pure Icon Focus */}
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+          {/* Balanced 6 Goals Grid (3x2) with Fast Staggered In-View Motion */}
+          <motion.div
+            variants={fastStaggerContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch"
+          >
             {goalsData.map((goal) => {
               const GoalIcon = iconMap[goal.icon] || TrendingUp;
 
               return (
-                <div
+                <motion.div
                   key={goal.id}
+                  variants={fadeInUpVariants}
                   className="group relative p-7 rounded-3xl bg-white border border-border-subtle hover:border-brand-cyan transition-all duration-300 ease-out hover:-translate-y-1.5 flex flex-col justify-between text-start overflow-hidden cursor-default"
                 >
                   {/* Top Glowing Accent */}
@@ -150,10 +169,10 @@ export function Values() {
 
                   {/* Interactive Bottom Accent Bar */}
                   <div className="h-0.5 w-8 bg-brand-cyan/30 group-hover:w-full group-hover:bg-brand-cyan transition-all duration-300 rounded-full mt-6" />
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </Container>
     </section>
