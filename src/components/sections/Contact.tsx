@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { Container } from "@/components/common/Container";
+import { SectionHeading } from "@/components/common/SectionHeading";
 import { ContactForm } from "./contact/ContactForm";
 import { ContactIllustration } from "./contact/ContactIllustration";
 import {
@@ -13,21 +14,12 @@ export function Contact() {
   return (
     <section id="contact" className="py-20 sm:py-28 bg-[#f8fafc] scroll-mt-20 overflow-hidden">
       <Container>
-        {/* Header Section */}
-        <motion.div
-          variants={fadeInUpVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-40px" }}
-          className="text-center mb-10 md:mb-14"
-        >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-navy tracking-tight mb-3">
-            لديك استفسار أو تحتاج مساعدة؟
-          </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-slate-600 font-normal max-w-2xl mx-auto leading-relaxed">
-            يسعد فريق يمن فيوتشر بتلقي استفساراتكم وملاحظاتكم، وسيقوم فريقنا بمتابعة طلبكم والتواصل معكم بأقرب وقت.
-          </p>
-        </motion.div>
+        {/* Header Section with Authored Motion Architecture */}
+        <SectionHeading
+          title="لديك استفسار أو تحتاج مساعدة؟"
+          description="يسعد فريق يمن فيوتشر بتلقي استفساراتكم وملاحظاتكم، وسيقوم فريقنا بمتابعة طلبكم والتواصل معكم بأقرب وقت."
+          className="mb-10 md:mb-14"
+        />
 
         {/* Jaib-Style 2-Column Grid */}
         <motion.div

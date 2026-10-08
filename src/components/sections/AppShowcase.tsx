@@ -18,7 +18,7 @@ export function AppShowcase() {
   return (
     <section
       id="app"
-      className="py-10 sm:py-14 bg-surface-muted border-b border-border-subtle relative overflow-hidden"
+      className="py-10 sm:py-14 bg-surface-muted  relative overflow-hidden"
     >
       <Container>
         {/* Main Brand Showcase Card (Zero shadows, clean borders, high-contrast, compact height) */}

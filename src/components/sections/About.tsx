@@ -79,7 +79,7 @@ function StoryScrollReveal({ story }: { story: string }) {
 
 export function About() {
   return (
-    <section id="about" className="py-20 bg-white border-b border-border-subtle overflow-hidden">
+    <section id="about" className="py-20 bg-white  overflow-hidden">
       <Container>
         {/* Company Identity & Story */}
         <motion.div

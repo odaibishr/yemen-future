@@ -45,7 +45,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 export function Values() {
   return (
-    <section id="values" className="py-24 sm:py-28 bg-surface-muted border-b border-border-subtle relative overflow-hidden">
+    <section id="values" className="py-24 sm:py-28 bg-surface-muted  relative overflow-hidden">
       {/* Subtle Financial Vector Grid Texture (Zero Shadows) */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.03]"
