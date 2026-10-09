@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Central User (Empowerment Anchor) -->
+  <circle cx="24" cy="15" r="5" stroke="#1A2754" stroke-width="2.2"/>
+  <path d="M15 32C15 27 19 24 24 24C29 24 33 27 33 32" stroke="#1A2754" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Left Community Node -->
+  <circle cx="10" cy="20" r="3.5" stroke="#73A7C1" stroke-width="2"/>
+  <path d="M5 33C5 29.5 8 27.5 11 27.5C12.8 27.5 14.5 28.5 15.5 30" stroke="#73A7C1" stroke-width="2" stroke-linecap="round"/>
+  <!-- Right Community Node -->
+  <circle cx="38" cy="20" r="3.5" stroke="#73A7C1" stroke-width="2"/>
+  <path d="M43 33C43 29.5 40 27.5 37 27.5C35.2 27.5 33.5 28.5 32.5 30" stroke="#73A7C1" stroke-width="2" stroke-linecap="round"/>
+  <!-- Baseline Inclusion Beam -->
+  <line x1="8" y1="38" x2="40" y2="38" stroke="#1A2754" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

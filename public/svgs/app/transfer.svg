@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Fast Transfer Bilateral Arrows -->
+  <path d="M10 18H36M36 18L28 10M36 18L28 26" stroke="#1a2754" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M38 30H12M12 30L20 22M12 30L20 38" stroke="#73a7c1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

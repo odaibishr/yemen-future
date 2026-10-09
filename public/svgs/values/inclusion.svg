@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Central Citizen Pillar -->
+  <circle cx="24" cy="14" r="5" stroke="#1a2754" stroke-width="2.2"/>
+  <path d="M14 31C14 26 18.5 23 24 23C29.5 23 34 26 34 31" stroke="#1a2754" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Left Merchant Node -->
+  <circle cx="10" cy="19" r="3.5" stroke="#73a7c1" stroke-width="2"/>
+  <path d="M5 33C5 29.5 8 27.5 11 27.5C12.8 27.5 14.5 28.5 15.5 30" stroke="#73a7c1" stroke-width="2" stroke-linecap="round"/>
+  <!-- Right Agent Access Node -->
+  <circle cx="38" cy="19" r="3.5" stroke="#73a7c1" stroke-width="2"/>
+  <path d="M43 33C43 29.5 40 27.5 37 27.5C35.2 27.5 33.5 28.5 32.5 30" stroke="#73a7c1" stroke-width="2" stroke-linecap="round"/>
+  <!-- Inclusion Baseline Bridge -->
+  <line x1="8" y1="37" x2="40" y2="37" stroke="#1a2754" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Silicon Processor Base -->
+  <rect x="9" y="9" width="30" height="30" rx="6" stroke="#1a2754" stroke-width="2.5"/>
+  <!-- Central Micro-Core Die -->
+  <rect x="17" y="17" width="14" height="14" rx="3" stroke="#73a7c1" stroke-width="2"/>
+  <circle cx="24" cy="24" r="3" fill="#1a2754"/>
+  <!-- API Data Bus Pins -->
+  <path d="M17 3V9M24 3V9M31 3V9M17 39V45M24 39V45M31 39V45" stroke="#1a2754" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M3 17H9M3 24H9M3 31H9M39 17H45M39 24H45M39 31H45" stroke="#1a2754" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Solder Corner Micro-Vias -->
+  <circle cx="13" cy="13" r="1.5" fill="#73a7c1"/>
+  <circle cx="35" cy="13" r="1.5" fill="#73a7c1"/>
+  <circle cx="13" cy="35" r="1.5" fill="#73a7c1"/>
+  <circle cx="35" cy="35" r="1.5" fill="#73a7c1"/>
+</svg>

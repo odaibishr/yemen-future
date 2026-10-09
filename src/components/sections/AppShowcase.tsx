@@ -1,10 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpLeft, ShieldCheck } from "lucide-react";
+import { ArrowUpLeft } from "@/components/icons";
+import { motion } from "motion/react";
 import { Container } from "@/components/common/Container";
 import { dafaaData } from "@/data/dafaa-app";
 import { DownloadButtons } from "./app-showcase/DownloadButtons";
+import {
+  ambientFloatingVariants,
+  fadeInUpVariants,
+  staggerContainerVariants,
+} from "@/lib/animations";
 
 export function AppShowcase() {
   const { app } = dafaaData;
@@ -12,11 +18,17 @@ export function AppShowcase() {
   return (
     <section
       id="app"
-      className="py-10 sm:py-14 bg-surface-muted border-b border-border-subtle relative overflow-hidden"
+      className="py-10 sm:py-14 bg-surface-muted  relative overflow-hidden"
     >
       <Container>
         {/* Main Brand Showcase Card (Zero shadows, clean borders, high-contrast, compact height) */}
-        <div className="bg-brand-navy rounded-3xl border border-brand-navy-light text-white p-5 sm:p-7 lg:p-8 overflow-hidden relative">
+        <motion.div
+          variants={staggerContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
+          className="bg-brand-navy rounded-3xl border border-brand-navy-light text-white p-5 sm:p-7 lg:p-8 overflow-hidden relative"
+        >
           {/* Subtle Ambient Radial Glow (Zero shadows) */}
           <div
             className="absolute top-0 right-0 w-72 h-72 bg-brand-cyan/10 rounded-full blur-3xl pointer-events-none"
@@ -25,8 +37,7 @@ export function AppShowcase() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center relative z-10">
             {/* Copy & Actions Column */}
-            <div className="lg:col-span-7 space-y-4 text-start">
-
+            <motion.div variants={fadeInUpVariants} className="lg:col-span-7 space-y-4 text-start">
               {/* Main Headline */}
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-[1.2] tracking-tight">
                 {app.name} <br />
@@ -60,14 +71,24 @@ export function AppShowcase() {
 
               {/* Compliance & Supervision Note */}
               <div className="pt-2 flex items-center gap-2 text-xs text-brand-cyan-light font-medium">
-                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                <Image
+                  src="/svgs/app/central-bank.svg"
+                  alt="مرخص من البنك المركزي"
+                  width={18}
+                  height={18}
+                  className="w-4.5 h-4.5 shrink-0"
+                />
                 <span>إحدى خدمات يمن فيوتشر المعتمدة والمرخصة من البنك المركزي اليمني</span>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Official Dafaa Logo Showcase Column */}
+            {/* Official Dafaa Logo Showcase Column with Ambient Floating */}
             <div className="lg:col-span-5 flex justify-center items-center w-full">
-              <div className="w-full max-w-70 sm:max-w-80 bg-white rounded-3xl p-6 sm:p-7 border border-brand-cyan/25 flex items-center justify-center">
+              <motion.div
+                variants={ambientFloatingVariants}
+                animate="animate"
+                className="w-full max-w-70 sm:max-w-80 bg-white rounded-3xl p-6 sm:p-7 border border-brand-cyan/25 flex items-center justify-center"
+              >
                 <div className="relative w-full aspect-square max-w-50 sm:max-w-57.5 flex items-center justify-center">
                   <Image
                     src="/images/dafaa-logo-official.png"
@@ -78,10 +99,10 @@ export function AppShowcase() {
                     className="w-full h-full object-contain"
                   />
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

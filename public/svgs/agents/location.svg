@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Map Pin Contour -->
+  <path d="M24 4C14.6 4 7 11.6 7 21C7 32 22 43.2 23.3 44.1C23.7 44.4 24.3 44.4 24.7 44.1C26 43.2 41 32 41 21C41 11.6 33.4 4 24 4Z" stroke="#1a2754" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Concentric Core -->
+  <circle cx="24" cy="20" r="7.5" stroke="#73a7c1" stroke-width="2"/>
+  <circle cx="24" cy="20" r="3.5" fill="#1a2754"/>
+</svg>

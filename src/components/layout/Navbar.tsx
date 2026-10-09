@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { useLenis } from "lenis/react";
 import { Menu, ArrowDownToLine, ChevronLeft } from "lucide-react";
 import { Logo } from "@/components/common/Logo";
 import { Button } from "@/components/ui/button";
@@ -27,6 +28,10 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
 
+  useLenis(({ scroll }) => {
+    setScrolled(scroll > 20);
+  });
+
   React.useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -44,7 +49,7 @@ export function Navbar() {
           className={cn(
             "pointer-events-auto transition-all duration-300 ease-out",
             scrolled
-              ? "mt-3 sm:mt-4 w-[92%] sm:w-[90%] max-w-5xl xl:max-w-6xl rounded-2xl border border-border-subtle bg-white/95 backdrop-blur-md px-4 sm:px-6"
+              ? "mt-3 sm:mt-4 w-[92%] sm:w-[90%] max-w-5xl xl:max-w-6xl rounded-2xl border border-border-subtle bg-white px-4 sm:px-6"
               : "mt-0 w-full max-w-full rounded-none border-b border-transparent bg-transparent px-4 sm:px-6 lg:px-8"
           )}
         >

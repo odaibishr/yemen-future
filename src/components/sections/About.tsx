@@ -1,37 +1,123 @@
-import { Target, Compass } from "lucide-react";
+"use client";
+
+import React, { useRef } from "react";
+import Image from "next/image";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  MotionValue,
+} from "motion/react";
 import { Container } from "@/components/common/Container";
 import { companyOverview } from "@/data/values";
+import {
+  fadeInUpVariants,
+  staggerContainerVariants,
+} from "@/lib/animations";
+
+function StoryWord({
+  word,
+  progress,
+  range,
+}: {
+  word: string;
+  progress: MotionValue<number>;
+  range: [number, number];
+}) {
+  const opacity = useTransform(progress, range, [0.25, 1]);
+  const color = useTransform(progress, range, ["#94a3b8", "#1e293b"]);
+
+  return (
+    <motion.span
+      style={{ opacity, color }}
+      className="inline-block me-[0.28em]"
+    >
+      {word}
+    </motion.span>
+  );
+}
+
+function StoryScrollReveal({ story }: { story: string }) {
+  const containerRef = useRef<HTMLParagraphElement>(null);
+
+  // Directly tracks scroll progress bidirectionally on every scroll pass
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start 0.75", "end 0.25"],
+  });
+
+  const words = story.split(" ");
+
+  return (
+    <p
+      ref={containerRef}
+      className="text-xl sm:text-2xl lg:text-3xl text-slate-800 leading-[1.8] font-normal"
+    >
+      {words.map((word, i) => {
+        const start = (i / words.length) * 0.85;
+        const end = Math.min(start + 0.25, 1);
+        return (
+          <StoryWord
+            key={i}
+            word={word}
+            progress={scrollYProgress}
+            range={[start, end]}
+          />
+        );
+      })}
+    </p>
+  );
+}
 
 export function About() {
   return (
-    <section id="about" className="py-20 bg-white border-b border-border-subtle">
+    <section id="about" className="relative z-10 py-20 bg-white overflow-hidden">
       <Container>
         {/* Company Identity & Story */}
-        <div className="space-y-6 text-start">
+        <motion.div
+          variants={staggerContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3, margin: "0px 0px -70px 0px" }}
+          className="space-y-6 text-start"
+        >
           {/* Company Brand */}
-          <div className="space-y-2">
+          <motion.div variants={fadeInUpVariants} className="space-y-2">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-brand-navy tracking-tight">
               يمن <span className="text-brand-cyan">فيوتشر</span>
             </h2>
             <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800 leading-snug">
               {companyOverview.name}
             </h3>
-          </div>
+          </motion.div>
 
-          {/* Company Story - Full Width, No Background, No Border, Bigger Font */}
-          <div className="w-full text-start">
-            <p className="text-xl sm:text-2xl lg:text-3xl text-slate-700 leading-relaxed font-normal">
-              {companyOverview.story}
-            </p>
-          </div>
-        </div>
+          {/* Company Story - Scroll Driven Word-by-Word Illumination (Once Only) */}
+          <motion.div variants={fadeInUpVariants} className="w-full text-start">
+            <StoryScrollReveal story={companyOverview.story} />
+          </motion.div>
+        </motion.div>
 
-        {/* Row 2: Vision & Mission Full-Width 2-Column Cards */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 w-full">
+        {/* Row 2: Vision & Mission Full-Width 2-Column Cards with Sequenced Entrance */}
+        <motion.div
+          variants={staggerContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.25, margin: "0px 0px -80px 0px" }}
+          className="mt-16 sm:mt-20 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 w-full"
+        >
           {/* Mission Card */}
-          <div className="p-8 rounded-2xl bg-white border-2 border-brand-cyan/30 text-start space-y-4 transition-colors hover:border-brand-cyan/60">
-            <div className="w-12 h-12 rounded-xl bg-brand-cyan-tint border border-brand-cyan/30 flex items-center justify-center text-brand-navy">
-              <Compass className="w-6 h-6 text-brand-navy" />
+          <motion.div
+            variants={fadeInUpVariants}
+            className="p-8 rounded-2xl bg-white border-2 border-brand-cyan/30 text-start space-y-4 transition-colors hover:border-brand-cyan/60"
+          >
+            <div className="w-14 h-14 rounded-2xl bg-brand-cyan-tint border border-brand-cyan/30 flex items-center justify-center p-2.5">
+              <Image
+                src="/svgs/about/mission.svg"
+                alt="رسالتنا"
+                width={40}
+                height={40}
+                className="w-9 h-9 object-contain"
+              />
             </div>
             <h3 className="text-2xl font-bold text-brand-navy">
               رسالتنا
@@ -39,12 +125,21 @@ export function About() {
             <p className="text-base text-slate-600 leading-relaxed">
               {companyOverview.mission}
             </p>
-          </div>
+          </motion.div>
 
           {/* Vision Card */}
-          <div className="p-8 rounded-2xl bg-brand-navy text-white border border-brand-navy-light text-start space-y-4 transition-colors hover:border-brand-cyan">
-            <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center text-brand-cyan-light">
-              <Target className="w-6 h-6 text-brand-cyan-light" />
+          <motion.div
+            variants={fadeInUpVariants}
+            className="p-8 rounded-2xl bg-brand-navy text-white border border-brand-navy-light text-start space-y-4 transition-colors hover:border-brand-cyan"
+          >
+            <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center p-2.5">
+              <Image
+                src="/svgs/about/vision.svg"
+                alt="رؤيتنا"
+                width={40}
+                height={40}
+                className="w-9 h-9 object-contain"
+              />
             </div>
             <h3 className="text-2xl font-bold text-white">
               رؤيتنا
@@ -52,8 +147,8 @@ export function About() {
             <p className="text-base text-slate-200 leading-relaxed">
               {companyOverview.vision}
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </Container>
     </section>
   );

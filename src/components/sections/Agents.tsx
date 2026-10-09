@@ -7,7 +7,7 @@ import { governorateNetworks } from "@/data/contact";
 
 export function Agents() {
   return (
-    <section id="agents" className="py-20 bg-white border-b border-border-subtle">
+    <section id="agents" className="py-20 bg-white ">
       <Container>
         <SectionHeading
           badge="الانتشار والوكلاء"
