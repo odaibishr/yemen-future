@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Envelope Body -->
+  <rect x="7" y="11" width="34" height="26" rx="4" stroke="#1A2754" stroke-width="2.5"/>
+  <!-- Flap Fold -->
+  <path d="M7 15L24 27L41 15" stroke="#73A7C1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Security Seal Stamp -->
+  <circle cx="24" cy="27" r="4.5" stroke="#1A2754" stroke-width="2"/>
+  <circle cx="24" cy="27" r="2" fill="#73A7C1"/>
+</svg>

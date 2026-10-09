@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Silicon Processor Substrate -->
+  <rect x="10" y="10" width="28" height="28" rx="6" stroke="#1A2754" stroke-width="2.5"/>
+  <!-- Central Micro-Core Die -->
+  <rect x="17" y="17" width="14" height="14" rx="3" stroke="#73A7C1" stroke-width="2"/>
+  <circle cx="24" cy="24" r="3" fill="#1A2754"/>
+  <!-- Circuit Pin Rails -->
+  <path d="M18 4V10M24 4V10M30 4V10" stroke="#1A2754" stroke-width="2" stroke-linecap="round"/>
+  <path d="M18 38V44M24 38V44M30 38V44" stroke="#1A2754" stroke-width="2" stroke-linecap="round"/>
+  <path d="M4 18H10M4 24H10M4 30H10" stroke="#1A2754" stroke-width="2" stroke-linecap="round"/>
+  <path d="M38 18H44M38 24H44M38 30H44" stroke="#1A2754" stroke-width="2" stroke-linecap="round"/>
+  <!-- Corner Solder Pads -->
+  <circle cx="14" cy="14" r="1.5" fill="#73A7C1"/>
+  <circle cx="34" cy="14" r="1.5" fill="#73A7C1"/>
+  <circle cx="14" cy="34" r="1.5" fill="#73A7C1"/>
+  <circle cx="34" cy="34" r="1.5" fill="#73A7C1"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Tier 1 Outer Concentric Ring -->
+  <circle cx="24" cy="24" r="20" stroke="#73A7C1" stroke-width="2"/>
+  <!-- Tier 2 Mid Target Ring -->
+  <circle cx="24" cy="24" r="13" stroke="#92BCD2" stroke-width="2.2"/>
+  <!-- Tier 3 Bullseye Core -->
+  <circle cx="24" cy="24" r="6" fill="#73A7C1" stroke="#1A2754" stroke-width="2"/>
+  <circle cx="24" cy="24" r="2" fill="#FFFFFF"/>
+  <!-- Radar Azimuth Crosshairs -->
+  <line x1="24" y1="4" x2="24" y2="10" stroke="#73A7C1" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="24" y1="38" x2="24" y2="44" stroke="#73A7C1" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="4" y1="24" x2="10" y2="24" stroke="#73A7C1" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="38" y1="24" x2="44" y2="24" stroke="#73A7C1" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

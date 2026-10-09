@@ -2,18 +2,13 @@
 
 import Image from "next/image";
 import {
-  Smartphone,
-  Receipt,
-  ArrowLeftRight,
-  QrCode,
   Bell,
-  Send,
-  PlusCircle,
   Home,
   Clock,
   User,
   CheckCircle2,
-} from "lucide-react";
+  QrCode,
+} from "@/components/icons";
 import { dafaaData } from "@/data/dafaa-app";
 
 export function PhoneSimulation() {
@@ -101,12 +96,12 @@ export function PhoneSimulation() {
 
               {/* Action Buttons */}
               <div className="pt-1.5 border-t border-white/10 grid grid-cols-2 gap-1.5">
-                <div className="bg-white/10 border border-white/10 rounded-lg py-1 px-1.5 flex items-center justify-center gap-1 text-[9px] font-bold text-white">
-                  <Send className="w-2.5 h-2.5 text-brand-cyan" />
+                <div className="bg-white/10 border border-white/10 rounded-lg py-1 px-1.5 flex items-center justify-center gap-1.5 text-[9px] font-bold text-white">
+                  <Image src="/svgs/app/transfer.svg" alt="تحويل" width={12} height={12} className="w-3 h-3 object-contain invert brightness-200" />
                   <span>تحويل</span>
                 </div>
-                <div className="bg-white/10 border border-white/10 rounded-lg py-1 px-1.5 flex items-center justify-center gap-1 text-[9px] font-bold text-white">
-                  <PlusCircle className="w-2.5 h-2.5 text-emerald-400" />
+                <div className="bg-white/10 border border-white/10 rounded-lg py-1 px-1.5 flex items-center justify-center gap-1.5 text-[9px] font-bold text-white">
+                  <Image src="/svgs/app/deposit.svg" alt="إيداع" width={12} height={12} className="w-3 h-3 object-contain invert brightness-200" />
                   <span>إيداع</span>
                 </div>
               </div>
@@ -126,8 +121,8 @@ export function PhoneSimulation() {
 
             <div className="grid grid-cols-4 gap-1.5">
               <div className="p-1.5 rounded-lg bg-white border border-border-subtle flex flex-col items-center gap-0.5 text-center">
-                <div className="w-6 h-6 rounded-md bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-700">
-                  <Smartphone className="w-3 h-3" />
+                <div className="w-6 h-6 rounded-md bg-blue-50 border border-blue-200 flex items-center justify-center p-0.5">
+                  <Image src="/svgs/app/telecom.svg" alt="باقات" width={18} height={18} className="w-4.5 h-4.5 object-contain" />
                 </div>
                 <span className="text-[8px] font-bold text-slate-800 leading-tight">
                   باقات
@@ -135,8 +130,8 @@ export function PhoneSimulation() {
               </div>
 
               <div className="p-1.5 rounded-lg bg-white border border-border-subtle flex flex-col items-center gap-0.5 text-center">
-                <div className="w-6 h-6 rounded-md bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700">
-                  <Receipt className="w-3 h-3" />
+                <div className="w-6 h-6 rounded-md bg-emerald-50 border border-emerald-200 flex items-center justify-center p-0.5">
+                  <Image src="/svgs/app/bills.svg" alt="فواتير" width={18} height={18} className="w-4.5 h-4.5 object-contain" />
                 </div>
                 <span className="text-[8px] font-bold text-slate-800 leading-tight">
                   فواتير
@@ -144,8 +139,8 @@ export function PhoneSimulation() {
               </div>
 
               <div className="p-1.5 rounded-lg bg-white border border-border-subtle flex flex-col items-center gap-0.5 text-center">
-                <div className="w-6 h-6 rounded-md bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-700">
-                  <ArrowLeftRight className="w-3 h-3" />
+                <div className="w-6 h-6 rounded-md bg-purple-50 border border-purple-200 flex items-center justify-center p-0.5">
+                  <Image src="/svgs/app/transfer.svg" alt="تحويل" width={18} height={18} className="w-4.5 h-4.5 object-contain" />
                 </div>
                 <span className="text-[8px] font-bold text-slate-800 leading-tight">
                   تحويل
@@ -153,8 +148,8 @@ export function PhoneSimulation() {
               </div>
 
               <div className="p-1.5 rounded-lg bg-white border border-border-subtle flex flex-col items-center gap-0.5 text-center">
-                <div className="w-6 h-6 rounded-md bg-brand-cyan-tint border border-brand-cyan/40 flex items-center justify-center text-brand-navy">
-                  <QrCode className="w-3 h-3" />
+                <div className="w-6 h-6 rounded-md bg-brand-cyan-tint border border-brand-cyan/40 flex items-center justify-center p-0.5">
+                  <Image src="/svgs/app/qr.svg" alt="دفع QR" width={18} height={18} className="w-4.5 h-4.5 object-contain" />
                 </div>
                 <span className="text-[8px] font-bold text-slate-800 leading-tight">
                   دفع QR

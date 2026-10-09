@@ -45,7 +45,7 @@ export function Logo({
         <div className="flex flex-col text-start">
           <span
             className={cn(
-              "font-extrabold tracking-tight leading-none font-sans",
+              "font-extrabold tracking-tight leading-none font-sans transition-colors duration-300",
               dimensions.textSize,
               variant === "light" ? "text-white" : "text-brand-navy"
             )}
@@ -54,7 +54,7 @@ export function Logo({
           </span>
           <span
             className={cn(
-              "font-medium leading-tight mt-0.5",
+              "font-medium leading-tight mt-0.5 transition-colors duration-300",
               dimensions.subSize,
               variant === "light" ? "text-brand-cyan-light" : "text-brand-cyan"
             )}
