@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Upper Fast Lane Arrow (Send) -->
+  <path d="M10 18H36M36 18L28 10M36 18L28 26" stroke="#1A2754" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Lower Fast Lane Arrow (Receive) -->
+  <path d="M38 30H12M12 30L20 22M12 30L20 38" stroke="#73A7C1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

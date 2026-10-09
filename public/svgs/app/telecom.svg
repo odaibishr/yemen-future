@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Device Shell -->
+  <rect x="14" y="7" width="20" height="34" rx="4.5" stroke="#1a2754" stroke-width="2.4"/>
+  <line x1="20" y1="37" x2="28" y2="37" stroke="#1a2754" stroke-width="2" stroke-linecap="round"/>
+  <!-- Broadcast Radiations -->
+  <path d="M20 17C21.2 15.8 22.8 15 24 15C25.2 15 26.8 15.8 28 17" stroke="#73a7c1" stroke-width="2" stroke-linecap="round"/>
+  <path d="M17 14C19 12 21.5 11 24 11C26.5 11 29 12 31 14" stroke="#73a7c1" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="24" cy="21" r="2" fill="#1a2754"/>
+  <!-- Telecom Data Pill -->
+  <rect x="18" y="26" width="12" height="6" rx="3" fill="#73a7c1"/>
+</svg>

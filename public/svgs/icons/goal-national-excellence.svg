@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Double Hanging Ribbons -->
+  <path d="M18 28V43L24 39L30 43V28" stroke="#1A2754" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Ornate National Excellence Rosette -->
+  <circle cx="24" cy="20" r="13" stroke="#73A7C1" stroke-width="2.5"/>
+  <circle cx="24" cy="20" r="9" stroke="#1A2754" stroke-width="1.8"/>
+  <!-- Central Geometric Star Emblem -->
+  <path d="M24 13L25.8 17.5L30.5 17.5L26.7 20.3L28.2 25L24 22.2L19.8 25L21.3 20.3L17.5 17.5L22.2 17.5L24 13Z" fill="#1A2754"/>
+</svg>

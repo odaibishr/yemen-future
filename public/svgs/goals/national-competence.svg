@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Hanging Ribbons -->
+  <path d="M17 28V43L24 39L31 43V28" stroke="#1a2754" stroke-width="2" stroke-linejoin="round"/>
+  <!-- National Excellence Rosette -->
+  <circle cx="24" cy="20" r="14" stroke="#73a7c1" stroke-width="2.5"/>
+  <circle cx="24" cy="20" r="10" stroke="#1a2754" stroke-width="1.8"/>
+  <!-- 8-Point Geometric Arabesque Star -->
+  <path d="M24 13L25.8 17.5L30.5 17.5L26.7 20.3L28.2 25L24 22.2L19.8 25L21.3 20.3L17.5 17.5L22.2 17.5L24 13Z" fill="#1a2754"/>
+</svg>
