@@ -1,13 +1,11 @@
 "use client";
 
 import React, { useRef } from "react";
-import { Target, Compass } from "lucide-react";
+import Image from "next/image";
 import {
   motion,
   useScroll,
   useTransform,
-  useMotionValue,
-  useMotionValueEvent,
   MotionValue,
 } from "motion/react";
 import { Container } from "@/components/common/Container";
@@ -41,17 +39,11 @@ function StoryWord({
 
 function StoryScrollReveal({ story }: { story: string }) {
   const containerRef = useRef<HTMLParagraphElement>(null);
-  const maxProgress = useMotionValue(0);
 
+  // Directly tracks scroll progress bidirectionally on every scroll pass
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 0.85", "start 0.08"],
-  });
-
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest > maxProgress.get()) {
-      maxProgress.set(Math.min(latest, 1));
-    }
+    offset: ["start 0.75", "end 0.25"],
   });
 
   const words = story.split(" ");
@@ -62,13 +54,13 @@ function StoryScrollReveal({ story }: { story: string }) {
       className="text-xl sm:text-2xl lg:text-3xl text-slate-800 leading-[1.8] font-normal"
     >
       {words.map((word, i) => {
-        const start = (i / words.length) * 0.88;
-        const end = Math.min(start + 0.22, 1);
+        const start = (i / words.length) * 0.85;
+        const end = Math.min(start + 0.25, 1);
         return (
           <StoryWord
             key={i}
             word={word}
-            progress={maxProgress}
+            progress={scrollYProgress}
             range={[start, end]}
           />
         );
@@ -79,14 +71,14 @@ function StoryScrollReveal({ story }: { story: string }) {
 
 export function About() {
   return (
-    <section id="about" className="py-20 bg-white  overflow-hidden">
+    <section id="about" className="relative z-10 py-20 bg-white overflow-hidden">
       <Container>
         {/* Company Identity & Story */}
         <motion.div
           variants={staggerContainerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-40px" }}
+          viewport={{ once: true, amount: 0.3, margin: "0px 0px -70px 0px" }}
           className="space-y-6 text-start"
         >
           {/* Company Brand */}
@@ -110,7 +102,7 @@ export function About() {
           variants={staggerContainerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.25, margin: "0px 0px -80px 0px" }}
           className="mt-16 sm:mt-20 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 w-full"
         >
           {/* Mission Card */}
@@ -118,8 +110,14 @@ export function About() {
             variants={fadeInUpVariants}
             className="p-8 rounded-2xl bg-white border-2 border-brand-cyan/30 text-start space-y-4 transition-colors hover:border-brand-cyan/60"
           >
-            <div className="w-12 h-12 rounded-xl bg-brand-cyan-tint border border-brand-cyan/30 flex items-center justify-center text-brand-navy">
-              <Compass className="w-6 h-6 text-brand-navy" />
+            <div className="w-14 h-14 rounded-2xl bg-brand-cyan-tint border border-brand-cyan/30 flex items-center justify-center p-2.5">
+              <Image
+                src="/svgs/about/mission.svg"
+                alt="رسالتنا"
+                width={40}
+                height={40}
+                className="w-9 h-9 object-contain"
+              />
             </div>
             <h3 className="text-2xl font-bold text-brand-navy">
               رسالتنا
@@ -134,8 +132,14 @@ export function About() {
             variants={fadeInUpVariants}
             className="p-8 rounded-2xl bg-brand-navy text-white border border-brand-navy-light text-start space-y-4 transition-colors hover:border-brand-cyan"
           >
-            <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center text-brand-cyan-light">
-              <Target className="w-6 h-6 text-brand-cyan-light" />
+            <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center p-2.5">
+              <Image
+                src="/svgs/about/vision.svg"
+                alt="رؤيتنا"
+                width={40}
+                height={40}
+                className="w-9 h-9 object-contain"
+              />
             </div>
             <h3 className="text-2xl font-bold text-white">
               رؤيتنا
