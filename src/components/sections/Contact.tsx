@@ -26,7 +26,7 @@ export function Contact() {
           variants={staggerContainerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-40px" }}
+          viewport={{ once: true, amount: 0.15, margin: "0px 0px -80px 0px" }}
           className="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-14 items-center"
         >
           {/* RTL Column 1 (Right): Contact Form */}
