@@ -2,22 +2,26 @@ import { Variants, Transition } from "motion/react";
 
 export const LUXURY_EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
+// Slower, smooth and majestic transitions so animations are clearly visible as users reach them
 export const transitionStandard: Transition = {
-    duration: 0.6,
+    duration: 0.95,
     ease: LUXURY_EASE,
 };
 
+export const transitionSlow: Transition = {
+    duration: 1.2,
+    ease: LUXURY_EASE,
+};
 
 export const transitionFast: Transition = {
-    duration: 0.35,
+    duration: 0.55,
     ease: LUXURY_EASE,
 };
-
 
 export const fadeInUpVariants: Variants = {
     hidden: {
         opacity: 0,
-        y: 24,
+        y: 28,
     },
     visible: {
         opacity: 1,
@@ -43,8 +47,8 @@ export const staggerContainerVariants: Variants = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.1,
-            delayChildren: 0.05,
+            staggerChildren: 0.18,
+            delayChildren: 0.08,
         },
     },
 };
@@ -56,8 +60,8 @@ export const fastStaggerContainerVariants: Variants = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.07,
-            delayChildren: 0.03,
+            staggerChildren: 0.14,
+            delayChildren: 0.06,
         },
     },
 };
@@ -73,11 +77,18 @@ export const buttonTapVariants: Variants = {
 
 export const ambientFloatingVariants: Variants = {
     animate: {
-        y: [-3, 3, -3],
+        y: [-4, 4, -4],
         transition: {
-            duration: 4.5,
+            duration: 5.5,
             repeat: Infinity,
             ease: "easeInOut",
         },
     },
 };
+
+// Standard viewport threshold ensuring elements don't animate until user actually reaches them
+export const inViewThreshold = {
+    once: true,
+    amount: 0.2,
+    margin: "0px 0px -80px 0px",
+};

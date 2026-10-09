@@ -48,8 +48,8 @@ export function SectionHeading({
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: prefersReducedMotion ? 0 : 0.12,
-        delayChildren: prefersReducedMotion ? 0 : 0.05,
+        staggerChildren: prefersReducedMotion ? 0 : 0.2,
+        delayChildren: prefersReducedMotion ? 0 : 0.08,
       },
     },
   };
@@ -57,7 +57,7 @@ export function SectionHeading({
   const titleVariants: Variants = {
     hidden: prefersReducedMotion
       ? { opacity: 0 }
-      : { opacity: 0, y: 18, filter: "blur(4px)" },
+      : { opacity: 0, y: 22, filter: "blur(6px)" },
     visible: prefersReducedMotion
       ? { opacity: 1, transition: { duration: 0.3 } }
       : {
@@ -65,7 +65,7 @@ export function SectionHeading({
         y: 0,
         filter: "blur(0px)",
         transition: {
-          duration: 0.65,
+          duration: 1.0,
           ease: LUXURY_EASE,
         },
       },
@@ -81,7 +81,7 @@ export function SectionHeading({
         opacity: 1,
         scaleX: 1,
         transition: {
-          duration: 0.5,
+          duration: 0.9,
           ease: LUXURY_EASE,
         },
       },
@@ -90,14 +90,14 @@ export function SectionHeading({
   const descriptionVariants: Variants = {
     hidden: prefersReducedMotion
       ? { opacity: 0 }
-      : { opacity: 0, y: 12 },
+      : { opacity: 0, y: 16 },
     visible: prefersReducedMotion
       ? { opacity: 1, transition: { duration: 0.3 } }
       : {
         opacity: 1,
         y: 0,
         transition: {
-          duration: 0.55,
+          duration: 0.95,
           ease: LUXURY_EASE,
         },
       },
@@ -110,7 +110,7 @@ export function SectionHeading({
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-60px" }}
+      viewport={{ once: true, amount: 0.25, margin: "0px 0px -70px 0px" }}
       className={cn(
         "group flex flex-col max-w-3xl space-y-4",
         isCenter ? "mx-auto text-center items-center" : "text-start items-start",
