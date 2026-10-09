@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpLeft, ShieldCheck } from "lucide-react";
+import { ArrowUpLeft } from "@/components/icons";
 import { motion } from "motion/react";
 import { Container } from "@/components/common/Container";
 import { dafaaData } from "@/data/dafaa-app";
@@ -26,7 +26,7 @@ export function AppShowcase() {
           variants={staggerContainerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-40px" }}
+          viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
           className="bg-brand-navy rounded-3xl border border-brand-navy-light text-white p-5 sm:p-7 lg:p-8 overflow-hidden relative"
         >
           {/* Subtle Ambient Radial Glow (Zero shadows) */}
@@ -71,7 +71,13 @@ export function AppShowcase() {
 
               {/* Compliance & Supervision Note */}
               <div className="pt-2 flex items-center gap-2 text-xs text-brand-cyan-light font-medium">
-                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                <Image
+                  src="/svgs/app/central-bank.svg"
+                  alt="مرخص من البنك المركزي"
+                  width={18}
+                  height={18}
+                  className="w-4.5 h-4.5 shrink-0"
+                />
                 <span>إحدى خدمات يمن فيوتشر المعتمدة والمرخصة من البنك المركزي اليمني</span>
               </div>
             </motion.div>
