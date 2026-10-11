@@ -1,56 +1,115 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
-import { ArrowUpLeft } from "@/components/icons";
+import {
+  ArrowUpLeft,
+  Zap,
+  Smartphone,
+  QrCode,
+  Building,
+} from "@/components/icons";
 import { motion } from "motion/react";
 import { Container } from "@/components/common/Container";
 import { dafaaData } from "@/data/dafaa-app";
 import { DownloadButtons } from "./app-showcase/DownloadButtons";
-import {
-  ambientFloatingVariants,
-  fadeInUpVariants,
-  staggerContainerVariants,
-} from "@/lib/animations";
+import { PhoneSimulation } from "./app-showcase/PhoneSimulation";
+import { LUXURY_EASE } from "@/lib/animations";
 
 export function AppShowcase() {
   const { app } = dafaaData;
 
+  const appHighlights = [
+    {
+      icon: <Zap className="w-4 h-4 text-emerald-400" />,
+      title: "تحويلات مالية ومصارفة",
+      desc: "تحويل فوري بين الحسابات ومصارفة لحظية للعملات بأفضل الأسعار",
+    },
+    {
+      icon: <Smartphone className="w-4 h-4 text-brand-cyan" />,
+      title: "شحن رصيد وباقات",
+      desc: "سداد وشحن باقات فورية لـ: يمن موبايل، يو، سبأفون، وواي",
+    },
+    {
+      icon: <QrCode className="w-4 h-4 text-blue-400" />,
+      title: "دفع المشتريات بالـ QR",
+      desc: "تسوق وادفع في آلاف المتاجر والمطاعم والكافيهات بلمسة واحدة",
+    },
+    {
+      icon: <Building className="w-4 h-4 text-amber-400" />,
+      title: "مدفوعات وسحب نقدي",
+      desc: "سداد فواتير الخدمات وسحب وإيداع نقدي عبر شبكة وكلاء يمن فيوتشر",
+    },
+  ];
+
   return (
     <section
       id="app"
-      className="py-10 sm:py-14 bg-surface-muted  relative overflow-hidden"
+      className="py-16 sm:py-24 bg-surface-muted relative overflow-hidden"
     >
       <Container>
-        {/* Main Brand Showcase Card (Zero shadows, clean borders, high-contrast, compact height) */}
-        <motion.div
-          variants={staggerContainerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2, margin: "0px 0px -80px 0px" }}
-          className="bg-brand-navy rounded-3xl border border-brand-navy-light text-white p-5 sm:p-7 lg:p-8 overflow-hidden relative"
-        >
-          {/* Subtle Ambient Radial Glow (Zero shadows) */}
+        {/* Main Showcase Container (Zero shadows, clean metallic border, deep contrast) */}
+        <div className="bg-linear-to-b from-brand-navy via-[#142048] to-[#0d1633] rounded-[36px] sm:rounded-[44px] border border-brand-navy-light/60 text-white p-6 sm:p-10 lg:p-12 xl:p-14 overflow-hidden relative">
+          {/* Subtle Ambient Radial Glows (Zero shadows) */}
           <div
-            className="absolute top-0 right-0 w-72 h-72 bg-brand-cyan/10 rounded-full blur-3xl pointer-events-none"
+            className="absolute -top-24 -right-24 w-96 h-96 bg-brand-cyan/15 rounded-full blur-3xl pointer-events-none"
+            aria-hidden="true"
+          />
+          <div
+            className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"
             aria-hidden="true"
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center relative z-10">
-            {/* Copy & Actions Column */}
-            <motion.div variants={fadeInUpVariants} className="lg:col-span-7 space-y-4 text-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center relative z-10">
+            {/* Copy & Features Column */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.05 }}
+              transition={{ duration: 0.7, ease: LUXURY_EASE }}
+              className="lg:col-span-7 space-y-6 text-start"
+            >
+              {/* Category Badge */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-brand-cyan-light text-xs font-semibold">
+                <span className="w-2 h-2 rounded-full bg-brand-cyan animate-pulse" />
+                <span>تطبيق محفظة دَفْع للهواتف الذكية</span>
+              </div>
+
               {/* Main Headline */}
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-[1.2] tracking-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.18] tracking-tight text-white">
                 {app.name} <br />
-                <span className="text-brand-cyan">{app.slogan}</span>
+                <span className="text-brand-cyan">تجربة مالية ذكية</span> في راحة يدك
               </h2>
 
-              {/* Concise Editorial Copy */}
+              {/* Editorial Description */}
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-xl font-normal">
-                {app.description}
+                {app.description} سدد فواتيرك، حوّل أموالك، وادفع مشترياتك في ثوانٍ مع أحدث واجهات الدفع الإلكتروني المصرفية في اليمن.
               </p>
 
+              {/* 4 App Highlights Grid from the Real App Interface */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                {appHighlights.map((feat, idx) => (
+                  <div
+                    key={idx}
+                    className="p-3.5 rounded-2xl bg-white/[0.06] border border-white/10 hover:border-brand-cyan/40 transition-colors flex items-start gap-3 text-start"
+                  >
+                    <div className="p-2 rounded-xl bg-white/10 border border-white/10 shrink-0">
+                      {feat.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-xs sm:text-sm font-bold text-white leading-tight">
+                        {feat.title}
+                      </h4>
+                      <p className="text-[11px] text-slate-300 leading-snug mt-1 font-normal">
+                        {feat.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
               {/* Learn More via Official Website Link */}
-              <div>
+              <div className="pt-1">
                 <a
                   href={app.websiteUrl}
                   target="_blank"
@@ -72,7 +131,7 @@ export function AppShowcase() {
                 <DownloadButtons />
               </div>
 
-              {/* Compliance & Supervision Note */}
+              {/* Central Bank Licensing Notice */}
               <div className="pt-2 flex items-center gap-2 text-xs text-brand-cyan-light font-medium">
                 <Image
                   src="/svgs/app/central-bank.svg"
@@ -85,27 +144,18 @@ export function AppShowcase() {
               </div>
             </motion.div>
 
-            {/* Official Dafaa Logo Showcase Column with Ambient Floating */}
-            <div className="lg:col-span-5 flex justify-center items-center w-full">
-              <motion.div
-                variants={ambientFloatingVariants}
-                animate="animate"
-                className="w-full max-w-70 sm:max-w-80 bg-white rounded-3xl p-6 sm:p-7 border border-brand-cyan/25 flex items-center justify-center"
-              >
-                <div className="relative w-full aspect-square max-w-50 sm:max-w-57.5 flex items-center justify-center">
-                  <Image
-                    src="/images/dafaa-logo-official.png"
-                    alt="شعار محفظة دَفْع الرسمي"
-                    width={260}
-                    height={260}
-                    priority
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              </motion.div>
-            </div>
+            {/* Authentic Interactive Smartphone Simulation Column */}
+            <motion.div
+              initial={{ opacity: 0, y: 24, scale: 0.96 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.05 }}
+              transition={{ duration: 0.75, delay: 0.15, ease: LUXURY_EASE }}
+              className="lg:col-span-5 flex justify-center items-center w-full"
+            >
+              <PhoneSimulation />
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );
