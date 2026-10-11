@@ -24,20 +24,6 @@ export function Hero() {
     offset: ["start start", "end start"],
   });
 
-  // Parallax Float Up (حركة النص للأعلى عند التمرير مع بقائه ظاهراً تماماً)
-  const textY = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, shouldReduceMotion ? 0 : -75]
-  );
-
-  // Stays fully visible while scrolling (يظل ظاهراً تماماً دون أن يختفي)
-  const textOpacity = useTransform(
-    scrollYProgress,
-    [0, 0.85, 1],
-    [1, 1, 0.92]
-  );
-
   // Fixed Background Parallax (الخلفية والزخارف تظل راسية وثابتة مع حركة تباينية ناعمة)
   const bgAmbientY = useTransform(
     scrollYProgress,
@@ -84,14 +70,7 @@ export function Hero() {
       </motion.div>
 
       <Container className="relative z-10">
-        {/* Scroll-Driven Upward Parallax Wrapper: Moves UP on scroll while remaining completely visible */}
-        <motion.div
-          style={{
-            y: textY,
-            opacity: textOpacity,
-          }}
-          className="max-w-4xl mx-auto flex flex-col items-center text-center space-y-6 sm:space-y-8 will-change-transform"
-        >
+        <div className="max-w-4xl mx-auto flex flex-col items-center text-center space-y-6 sm:space-y-8">
           {/* Initial Entrance Orchestration */}
           <motion.div
             variants={staggerContainerVariants}
@@ -116,7 +95,7 @@ export function Hero() {
               نُعنى بتقديم خدمات التكنولوجيا المالية (الفنتك) وحلول وخدمات الدفع الإلكتروني المطلوبة لتسهيل ومواكبة حاجة المواطن في الدفع وتحسين تعاملاته المالية وفق أرقى مستويات الأمان والسهولة والجودة.
             </motion.p>
           </motion.div>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );

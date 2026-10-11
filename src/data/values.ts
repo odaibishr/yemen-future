@@ -110,10 +110,4 @@ export const goalsData: GoalItem[] = [
     description: "دراسة الفرص والأفكار التي تحقق التسهيلات والنجاحات في إدارة التعاملات المالية الرقمية.",
     icon: "/svgs/goals/banking-partnerships.svg",
   },
-  {
-    id: "g7",
-    title: "بناء علاقات طويلة الأمد",
-    description: "بناء علاقات طويلة الأمد مع العملاء من خلال تقديم خدمات تحقق احتياجاتهم ورغباتهم.",
-    icon: "/svgs/icons/certified-agent-network.svg",
-  },
 ];
