@@ -65,7 +65,10 @@ export function AppShowcase() {
               </div>
 
               {/* Enhanced Download Buttons (Google Play, App Store) */}
-              <div className="pt-1">
+              <div className="pt-2 space-y-2.5">
+                <p className="text-sm font-bold text-slate-200">
+                  {app.downloadTitle || "لتحميل تطبيق دَفْع"}
+                </p>
                 <DownloadButtons />
               </div>
 

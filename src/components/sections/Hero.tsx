@@ -104,8 +104,8 @@ export function Hero() {
               variants={fadeInUpVariants}
               className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.18] tracking-tight"
             >
-              حلول مالية ذكية <br />
-              <span className="text-brand-cyan">تصنع المستقبل</span> بين يديك
+              شركة يمن فيوتشر للخدمات المالية <br />
+              <span className="text-brand-cyan">حلول وتقنيات مالية</span>
             </motion.h1>
 
             {/* Descriptive Mission Copy */}
@@ -113,7 +113,7 @@ export function Hero() {
               variants={fadeInUpVariants}
               className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-normal"
             >
-              تقدم شركة <strong>يمن فيوتشر</strong> منظومة دفع رقمية متكاملة تمنحك سرعة فائقة في تحويل الأموال، وسداد الفواتير وشحن الرصيد لكافة الشبكات، وإدارة مدفوعاتك اليومية والتجارية بأعلى معايير الأمان المصرفي.
+              نُعنى بتقديم خدمات التكنولوجيا المالية (الفنتك) وحلول وخدمات الدفع الإلكتروني المطلوبة لتسهيل ومواكبة حاجة المواطن في الدفع وتحسين تعاملاته المالية وفق أرقى مستويات الأمان والسهولة والجودة.
             </motion.p>
           </motion.div>
         </motion.div>
