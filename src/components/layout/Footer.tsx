@@ -58,7 +58,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="#app" className="hover:text-brand-cyan transition-colors">
-                  تطبيق المحفظة الرقمية
+                  خدماتنا (محفظة دَفْع)
                 </Link>
               </li>
               <li>
