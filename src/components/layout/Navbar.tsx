@@ -20,7 +20,7 @@ const navLinks = [
   { href: "#hero", label: "الرئيسية" },
   { href: "#about", label: "من نحن" },
   { href: "#values", label: "القيم والأهداف" },
-  { href: "#app", label: "تطبيق المحفظة" },
+  { href: "#app", label: "خدماتنا" },
   { href: "#contact", label: "اتصل بنا" },
 ];
 

@@ -4,10 +4,7 @@ import React from "react";
 import Image from "next/image";
 import {
   ArrowUpLeft,
-  Zap,
-  Smartphone,
-  QrCode,
-  Building,
+  Sparkles,
 } from "@/components/icons";
 import { motion } from "motion/react";
 import { Container } from "@/components/common/Container";
@@ -18,29 +15,6 @@ import { LUXURY_EASE } from "@/lib/animations";
 
 export function AppShowcase() {
   const { app } = dafaaData;
-
-  const appHighlights = [
-    {
-      icon: <Zap className="w-4 h-4 text-emerald-400" />,
-      title: "تحويلات مالية ومصارفة",
-      desc: "تحويل فوري بين الحسابات ومصارفة لحظية للعملات بأفضل الأسعار",
-    },
-    {
-      icon: <Smartphone className="w-4 h-4 text-brand-cyan" />,
-      title: "شحن رصيد وباقات",
-      desc: "سداد وشحن باقات فورية لـ: يمن موبايل، يو، سبأفون، وواي",
-    },
-    {
-      icon: <QrCode className="w-4 h-4 text-blue-400" />,
-      title: "دفع المشتريات بالـ QR",
-      desc: "تسوق وادفع في آلاف المتاجر والمطاعم والكافيهات بلمسة واحدة",
-    },
-    {
-      icon: <Building className="w-4 h-4 text-amber-400" />,
-      title: "مدفوعات وسحب نقدي",
-      desc: "سداد فواتير الخدمات وسحب وإيداع نقدي عبر شبكة وكلاء يمن فيوتشر",
-    },
-  ];
 
   return (
     <section
@@ -61,7 +35,7 @@ export function AppShowcase() {
           />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center relative z-10">
-            {/* Copy & Features Column */}
+            {/* Copy & Overview Column */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -72,54 +46,47 @@ export function AppShowcase() {
               {/* Category Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-brand-cyan-light text-xs font-semibold">
                 <span className="w-2 h-2 rounded-full bg-brand-cyan animate-pulse" />
-                <span>تطبيق محفظة دَفْع للهواتف الذكية</span>
+                <span>خدماتنا • محفظة دَفْع الإلكترونية</span>
               </div>
 
               {/* Main Headline */}
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.18] tracking-tight text-white">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.2] tracking-tight text-white">
                 {app.name} <br />
-                <span className="text-brand-cyan">تجربة مالية ذكية</span> في راحة يدك
+                <span className="text-brand-cyan">{app.slogan || "حلول وتقنيات مالية"}</span> في متناول يدك
               </h2>
 
-              {/* Editorial Description */}
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-xl font-normal">
-                {app.description} سدد فواتيرك، حوّل أموالك، وادفع مشترياتك في ثوانٍ مع أحدث واجهات الدفع الإلكتروني المصرفية في اليمن.
-              </p>
-
-              {/* 4 App Highlights Grid from the Real App Interface */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                {appHighlights.map((feat, idx) => (
-                  <div
-                    key={idx}
-                    className="p-3.5 rounded-2xl bg-white/[0.06] border border-white/10 hover:border-brand-cyan/40 transition-colors flex items-start gap-3 text-start"
-                  >
-                    <div className="p-2 rounded-xl bg-white/10 border border-white/10 shrink-0">
-                      {feat.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-xs sm:text-sm font-bold text-white leading-tight">
-                        {feat.title}
-                      </h4>
-                      <p className="text-[11px] text-slate-300 leading-snug mt-1 font-normal">
-                        {feat.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+              {/* Comprehensive Introductory Overview (نبذة تعريفية شاملة) */}
+              <div className="space-y-3.5 text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
+                <p>
+                  تُعد <strong className="text-white font-semibold">محفظة دَفْع</strong> الذراع التقني والمالي الرائد لشركة يمن فيوتشر للخدمات المالية، والتي أُطلقت لتمثل نقلة نوعية في قطاع المدفوعات الرقمية والشمول المالي في اليمن.
+                </p>
+                <p>
+                  تمنح المحفظة الأفراد ورواد الأعمال تجربة مصرفية ذكية وفورية عبر الهاتف، تمكنهم من إدارة أرصدتهم، وإجراء التحويلات، وسداد الفواتير والمشتريات بكل سهولة وموثوقية، مدعومة بأعلى معايير الحماية والأمان المالي.
+                </p>
               </div>
 
-              {/* Learn More via Official Website Link */}
-              <div className="pt-1">
+              {/* Wallet Portal Card / Outlink (التفاصيل الكاملة في موقع المحفظة) */}
+              <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.06] border border-brand-cyan/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="space-y-1 text-start">
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-brand-cyan shrink-0" />
+                    <span className="text-xs sm:text-sm font-bold text-white">
+                      الموقع الرسمي لمحفظة دَفْع
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-300 leading-normal">
+                    للاطلاع على تفاصيل الخدمات، آليات فتح الحسابات، ودليل الاستخدام الشامل.
+                  </p>
+                </div>
+
                 <a
                   href={app.websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-brand-cyan hover:text-white transition-colors group"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-cyan hover:bg-brand-cyan-light text-brand-navy font-bold text-xs sm:text-sm transition-colors shrink-0 cursor-pointer"
                 >
-                  <span className="underline underline-offset-4 decoration-brand-cyan/40 group-hover:decoration-white">
-                    {app.websiteLinkText}
-                  </span>
-                  <ArrowUpLeft className="w-3.5 h-3.5 text-brand-cyan-light group-hover:text-white transition-transform group-hover:-translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <span>زيارة موقع المحفظة</span>
+                  <ArrowUpLeft className="w-4 h-4" />
                 </a>
               </div>
 
